@@ -27,6 +27,8 @@ public class ClienteDTO implements Serializable {
 	protected Set<Integer> perfis = new HashSet<>();
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
+	protected String dataNascimento;
+	protected String sexo;
 
 	public ClienteDTO() {
 		super();
@@ -42,9 +44,10 @@ public class ClienteDTO implements Serializable {
 		this.senha = cli.getSenha();
 		this.perfis = cli.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());;
 		this.dataCriacao = cli.getDataCriacao();
+		this.dataNascimento = cli.getDataNascimento();
 		addPerfil(Perfil.CLIENTE);
-	}
-
+	}	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -99,6 +102,17 @@ public class ClienteDTO implements Serializable {
 
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getsexo() {
+		return sexo;
 	}
 	
 	

@@ -25,20 +25,22 @@ public class Tecnico extends Pessoa {
 		addPerfil(Perfil.TECNICO);
 	}
 
-	public Tecnico(Integer id, String nome, String cpf, String email, String senha) {
-		super(id, nome, cpf, email, senha);
+	public Tecnico(Integer id, String nome, String cpf, String email, String senha, String dataNascimento, String sexo) {
+		super(id, nome, cpf, email, senha, dataNascimento, sexo);
 		addPerfil(Perfil.TECNICO);
 	}
 	
-	public Tecnico(TecnicoDTO dto) {
+	public Tecnico(TecnicoDTO obj) {
 		super();
-		this.id = dto.getId();
-		this.nome = dto.getNome();
-		this.cpf = dto.getCpf();
-		this.email = dto.getEmail();
-		this.senha = dto.getSenha();
-		this.perfis = dto.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
-		this.dataCriacao = dto.getDataCriacao();
+		this.id = obj.getId();
+		this.nome = obj.getNome();
+		this.cpf = obj.getCpf();
+		this.email = obj.getEmail();
+		this.senha = obj.getSenha();
+		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
+		this.dataCriacao = obj.getDataCriacao();
+		this.dataNascimento = obj.getdataNascimento();
+		this.sexo = obj.getsexo();
 	}
 
 	public List<Chamado> getChamados() {
@@ -48,5 +50,5 @@ public class Tecnico extends Pessoa {
 	public void setChamados(List<Chamado> chamados) {
 		this.chamados = chamados;
 	}
-	
+
 }
