@@ -41,7 +41,7 @@ public abstract class Pessoa implements Serializable {
 	protected Set<Integer> perfis = new HashSet<>();
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
-	protected String dataNascimento;
+	protected LocalDate dataNascimento;
 	protected String sexo;
 	
 	public Pessoa() {
@@ -49,7 +49,7 @@ public abstract class Pessoa implements Serializable {
 		addPerfil(Perfil.CLIENTE);
 	}
 
-	public Pessoa(Integer id, String nome, String cpf, String email, String senha, String dataNascimento, String sexo) {
+	public Pessoa(Integer id, String nome, String cpf, String email, String senha, LocalDate dataNascimento, String sexo) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -117,11 +117,11 @@ public abstract class Pessoa implements Serializable {
 		this.dataCriacao = dataCriacao;
 	}
 	
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String DataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	

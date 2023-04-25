@@ -27,7 +27,7 @@ public class ClienteDTO implements Serializable {
 	protected Set<Integer> perfis = new HashSet<>();
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
-	protected String dataNascimento;
+	protected LocalDate dataNascimento;
 	protected String sexo;
 
 	public ClienteDTO() {
@@ -105,10 +105,10 @@ public class ClienteDTO implements Serializable {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

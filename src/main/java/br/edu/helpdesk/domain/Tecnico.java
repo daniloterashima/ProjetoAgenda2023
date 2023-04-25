@@ -1,5 +1,6 @@
 package br.edu.helpdesk.domain;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +26,7 @@ public class Tecnico extends Pessoa {
 		addPerfil(Perfil.TECNICO);
 	}
 
-	public Tecnico(Integer id, String nome, String cpf, String email, String senha, String dataNascimento, String sexo) {
+	public Tecnico(Integer id, String nome, String cpf, String email, String senha, LocalDate dataNascimento, String sexo) {
 		super(id, nome, cpf, email, senha, dataNascimento, sexo);
 		addPerfil(Perfil.TECNICO);
 	}
