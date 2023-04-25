@@ -33,13 +33,11 @@ public class DBService {
 	
 	public void instaciaDB() {
 		
-		Tecnico tec1 = new Tecnico(null, "Eduardo Silva", "33484545810", "eddcesilva@gmail.com",  encoder.encode("123456"));
+		Tecnico tec1 = new Tecnico(null, "Primeiro Acesso User", "73229150031", "primeiroacessouser@gmail.com",  encoder.encode("123456"));
 		tec1.addPerfil(Perfil.ADMIN);
 		
-		Tecnico tec2 = new Tecnico(null, "Ivoneide Silva", "47632605886", "neidinidnid@hotmail.com",  encoder.encode("123456"));
-		tec2.addPerfil(Perfil.ADMIN);
 		
-		Cliente cli1 = new Cliente(null, "Linus Torvalds", "14868316052", "linus@gmail.com", encoder.encode("123456"));
+		Cliente cli1 = new Cliente(null, "Primeiro Acesso", "29000457033", "primeiroacesso@gmail.com", encoder.encode("123456"));
 		
 		Chamado c1 = new Chamado(null, Prioridade.BAIXA, Status.ANDAMENTO, "Chamado 01", "Primeiro chamado", tec1, cli1);
 		
