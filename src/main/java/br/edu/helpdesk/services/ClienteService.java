@@ -43,6 +43,8 @@ public class ClienteService {
 		dto.setSenha(encoder.encode(dto.getSenha()));
 		validaPorCpfEEmail(dto);
 		Cliente cli = new Cliente(dto);
+		dto.getDataNascimento();
+		dto.getsexo();
 		return clienteRepository.save(cli);
 	}
 

@@ -45,6 +45,7 @@ public class ClienteDTO implements Serializable {
 		this.perfis = cli.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());;
 		this.dataCriacao = cli.getDataCriacao();
 		this.dataNascimento = cli.getDataNascimento();
+		this.sexo = cli.getsexo();
 		addPerfil(Perfil.CLIENTE);
 	}	
 	
@@ -113,6 +114,9 @@ public class ClienteDTO implements Serializable {
 
 	public String getsexo() {
 		return sexo;
+	}
+	public void setsexo(String sexo) {
+		this.sexo = sexo;
 	}
 	
 	
