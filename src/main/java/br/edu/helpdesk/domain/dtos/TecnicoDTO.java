@@ -19,34 +19,22 @@ public class TecnicoDTO implements Serializable {
 	protected Integer id;
 	@NotNull(message = "O campo NOME é requerido!")
 	protected String nome;
-	@NotNull(message = "O campo CPF é requerido!")
-	protected String cpf;
-	@NotNull(message = "O campo E-MAIL é requerido!")
-	protected String email;
-	protected String senha;
-	protected Set<Integer> perfis = new HashSet<>();
-	@JsonFormat(pattern = "dd/MM/yyyy")
-	protected LocalDate dataCriacao = LocalDate.now();
-	public LocalDate dataNascimento;
-	public String sexo;
+	protected String comentario;
+	protected LocalDate dataCriacao;
+	protected LocalDate dataConclusao;	
+	
 
 	public TecnicoDTO() {
-		super();
-		addPerfil(Perfil.TECNICO);
+
 	}
 	
 	public TecnicoDTO(Tecnico tec) {
 		super();
 		this.id = tec.getId();
 		this.nome = tec.getNome();
-		this.cpf = tec.getCpf();
-		this.email = tec.getEmail();
-		this.senha = tec.getSenha();
-		this.perfis = tec.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
+		this.comentario = tec.getComentario();
 		this.dataCriacao = tec.getDataCriacao();
-		this.dataNascimento = tec.getDataNascimento();
-		this.sexo = tec.getsexo();
-		addPerfil(Perfil.TECNICO);
+		this.dataConclusao = tec.getDataConclusao();
 	}
 
 	public Integer getId() {
@@ -65,36 +53,12 @@ public class TecnicoDTO implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getComentario() {
+		return comentario;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public Set<Perfil> getPerfis() {
-		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
-	}
-
-	public void addPerfil(Perfil perfil) {
-		this.perfis.add(perfil.getCodigo());
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
 	}
 
 	public LocalDate getDataCriacao() {
@@ -104,21 +68,13 @@ public class TecnicoDTO implements Serializable {
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
-	
-	public LocalDate getdataNascimento() {
-		return dataNascimento;
+
+	public LocalDate getDataConclusao() {
+		return dataConclusao;
 	}
 
-	public void setdataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	
-	public String getsexo() {
-		return sexo;
-	}
-
-	public void setsexo(String sexo) {
-		this.sexo = sexo;
+	public void setDataConclusao(LocalDate dataConclusao) {
+		this.dataConclusao = dataConclusao;
 	}
 	
 }

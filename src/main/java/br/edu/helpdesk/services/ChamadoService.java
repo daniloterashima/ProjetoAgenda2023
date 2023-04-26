@@ -45,7 +45,6 @@ public class ChamadoService {
 	}
 	
 	private Chamado newChamado(ChamadoDTO dto) {
-		Tecnico tec = tecnicoService.findById(dto.getTecnico());
 		Cliente cli = clienteService.findById(dto.getCliente());
 		
 		Chamado cham = new Chamado();
@@ -55,7 +54,6 @@ public class ChamadoService {
 		if (dto.getStatus().equals(2)) {
 			cham.setDataFechamento(LocalDate.now());
 		}
-		cham.setTecnico(tec);
 		cham.setCliente(cli);
 		cham.setPrioridade(Prioridade.toEnum(dto.getPrioridade()));
 		cham.setStatus(Status.toEnum(dto.getStatus()));

@@ -27,26 +27,18 @@ public class DBService {
 	private TecnicoRepository tecnicoRepository;
 	
 	@Autowired
-	private ChamadoRepository chamadoRepository;
-	
-	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
 	public void instaciaDB() {
 		
-		Tecnico tec1 = new Tecnico(null, "Primeira tarefa", "33484545810", "eddcesilva@gmail.com",  encoder.encode("123456"), LocalDate.of(2023, 01, 01), "M");
-		tec1.addPerfil(Perfil.ADMIN);
+		Tecnico tec1 = new Tecnico(null, "Primeira tarefa", "Essa é a primeira tarefa da familia");
 		
-		Tecnico tec2 = new Tecnico(null, "Segunda tarefa", "47632605886", "segunda@hotmail.com",  encoder.encode("123456"), LocalDate.of(2023, 01, 01), "M");
-		tec2.addPerfil(Perfil.ADMIN);
+		Tecnico tec2 = new Tecnico(null, "Segunda tarefa", "Essa é a segunda tarefa da familia");
 		
 		Cliente cli1 = new Cliente(null, "Primeiro Acesso", "15838367059", "primeiroacesso@gmail.com", encoder.encode("123456"), LocalDate.of(2023, 01, 01), "M");
 		
-		Chamado c1 = new Chamado(null, Prioridade.BAIXA, Status.ANDAMENTO, "Chamado 01", "Primeiro chamado", tec1, cli1);
-		
 		tecnicoRepository.saveAll(Arrays.asList(tec1, tec2));
-		clienteRepository.saveAll(Arrays.asList(cli1));
-		chamadoRepository.saveAll(Arrays.asList(c1));
+		clienteRepository.saveAll(Arrays.asList(cli1));		
 		
 	}
 
