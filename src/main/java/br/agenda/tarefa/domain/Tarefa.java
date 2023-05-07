@@ -50,7 +50,7 @@ public class Tarefa {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.comentario = obj.getComentario();
-		this.usuario = obj.getComentario();
+		this.usuario = obj.getUsuario();
 		this.dataCriacao = obj.getDataCriacao();
 		this.dataConclusao = obj.getDataConclusao();
 	
