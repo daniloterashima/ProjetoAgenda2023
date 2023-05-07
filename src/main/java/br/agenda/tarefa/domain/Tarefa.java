@@ -96,7 +96,7 @@ public class Tarefa {
 		this.dataConclusao = dataConclusao;
 	}
 	public String getUsuario() {
-		return comentario;
+		return usuario;
 	}
 
 	public void setUsuario(String usuario) {
